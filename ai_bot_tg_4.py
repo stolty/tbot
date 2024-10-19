@@ -10,11 +10,8 @@ from telebot.async_telebot import AsyncTeleBot
 4. убран   апи ключ \ токен тг   для деплоя на облако
 '''
 
-TG_TOKEN = os.getenv('TG_TOKEN')
-TOGETHER_API_KEY = os.getenv('TOGETHER_API_KEY')
-
-bot = AsyncTeleBot(TG_TOKEN)
-client = Together(TOGETHER_API_KEY)
+bot = AsyncTeleBot(os.getenv('TG_TOKEN'))
+client = Together()
 
 
 def get_answer(_model, user_text):
